@@ -30,57 +30,42 @@ export class FetchpricesService {
     const defaultClient = finnhub.ApiClient.instance;
     const api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = "brjvrqvrh5r9g3otgpq0" // get from https://finnhub.io/
-    const api = new finnhub.DefaultApi();
+    const finnHub = new finnhub.DefaultApi();
     //Set up done
    
     //API call....
-      api.quote("AMZN",(error,data,response)=>{
-        if(error){
-          console.error(error);
-        }
-        else{
+    finnHub.quote("AMZN",(error,data,response)=>{
+       
           //Setting up the value in BehaviorSubject....
           this.data=data.c;
           console.log("Amazon:",data.c);
           this.coreData.next(data.c);
          return data;
-          }
+          
   })
-  api.quote("IBM",(error,data,response)=>{
-    if(error){
-      console.error(error);
-    }
-    else{
+  finnHub.quote("IBM",(error,data,response)=>{
       //Setting up the value in BehaviorSubject....
       this.data1=data.c;
       console.log("IBM:",data.c);
       this.coreData1.next(data.c);
      return data;
-      }
+      
 })
-api.quote("MSFT",(error,data,response)=>{
-  if(error){
-    console.error(error);
-  }
-  else{
+finnHub.quote("MSFT",(error,data,response)=>{
     //Setting up the value in BehaviorSubject....
     console.log("MSFT",data.c)
     this.data2=data.c;
     this.coreData2.next(data.c);
    return data;
-    }
+    
 })
-api.quote("AAPL",(error,data,response)=>{
-  if(error){
-    console.error(error);
-  }
-  else{
-    //Setting up the value in BehaviorSubject....
+finnHub.quote("AAPL",(error,data,response)=>{
+      //Setting up the value in BehaviorSubject....
     console.log("Apple",data.c)
     this.data3=data.c;
     this.coreData3.next(data.c);
    return data;
-    }
+    
 })
 }
   

@@ -13,7 +13,7 @@ import { ConstantPool } from '@angular/compiler';
 })
 
 export class StockpriceComponent implements OnInit {
-  value = 0;
+  value = new BehaviorSubject<any>(0) ;
   valu1 = new BehaviorSubject<any>(0);
   valu2 = new BehaviorSubject<any>(0);
   valu3 = new BehaviorSubject<any>(0);
