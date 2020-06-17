@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "stockapp-d6436": {
+      "hosting": {
+        "stock-app": [
+          "stockapp-d6436"
+        ]
+      }
+    }
+  }
+}

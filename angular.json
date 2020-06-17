@@ -117,8 +117,16 @@
               "devServerTarget": "stock-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "stock-app"
+    }
+  },
+  "defaultProject": "stock-app",
+  "cli": {
+    "analytics": "87a49a38-3e77-4204-93cb-a0e04e384ae5"
+  }
 }
