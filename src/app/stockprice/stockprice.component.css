@@ -7,8 +7,20 @@ li{
 }
 .list{
    
-    width:25%;
+    width:60%;
 }
 .listContainer{
     top: 500px;;
+}
+.ng-autocomplete{
+    top:25px;
+    margin-left: 420px;
+    
+    width: 50%;
+    position: relative;
+}
+.resetButton{
+    background-color: black;
+    color: white;
+    border-radius: 4px;
 }

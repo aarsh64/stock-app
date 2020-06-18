@@ -185,14 +185,8 @@ stockArray=[];
   onFocused(e){
     // do something when input is focused
   }
-  public randomize(): void {
-    this.loadChart=false;
-    this.loadChart=true;
-
+  public reset(): void {
     this.stockX.splice(0,this.stockX.length);
-    this.ngOnInit();
-    
-    this.stockX.push(this.value,this.valu1,this.valu2,this.valu3);
-    this.stockArray.push()
+    this.stockArray.splice(0,this.stockArray.length);
   }
 }

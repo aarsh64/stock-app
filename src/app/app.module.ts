@@ -14,7 +14,9 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireDatabaseModule } from '@angular/fire/database';
-
+import * as finnhub from 'finnhub';
+import axios from 'axios';
+import {AxiosInstance} from 'axios';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,8 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     BrowserAnimationsModule, 
     AutocompleteLibModule,
     AngularFireModule.initializeApp(environment.firebase),
+    
+    
       ],
   providers: [],
   bootstrap: [AppComponent]
