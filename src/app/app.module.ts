@@ -8,7 +8,10 @@ import { environment } from "src/environments/environment";
 import { StockpriceComponent } from './stockprice/stockprice.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
-
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireAuthModule } from "@angular/fire/auth";
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireDatabaseModule } from '@angular/fire/database';
 
@@ -24,6 +27,7 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
     HttpClientModule,
     BrowserAnimationsModule, 
     AutocompleteLibModule,
+    AngularFireModule.initializeApp(environment.firebase),
       ],
   providers: [],
   bootstrap: [AppComponent]
