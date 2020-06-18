@@ -1,9 +1,14 @@
 li{
+   
     padding-left:5px;
     margin-bottom: 5px;
     border:1px solid black;
     border-radius: 5px;;
 }
 .list{
+   
     width:25%;
+}
+.listContainer{
+    top: 500px;;
 }

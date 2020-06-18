@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from "src/environments/environment";
 import { StockpriceComponent } from './stockprice/stockprice.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireDatabaseModule } from '@angular/fire/database';
 
@@ -18,8 +21,9 @@ import { StockpriceComponent } from './stockprice/stockprice.component';
     BrowserModule,
     AppRoutingModule,
     ChartsModule,
-    HttpClientModule, 
-
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    AutocompleteLibModule,
       ],
   providers: [],
   bootstrap: [AppComponent]
