@@ -94,8 +94,9 @@ stockArray=[];
    
 
      ngOnInit() {
-      this.loadChart=false;
-      this.barGraph();
+       this.service.getData();
+
+
  }
  barGraph(){ 
    }
@@ -155,7 +156,8 @@ stockArray=[];
       })
     }
     if(item.name == "Microsoft"){
-      this.stockX.push(this.valu2);
+      this.stockX.splice(3,0,this.valu2);
+
       this.stockName.push("Microsoft");
      
       console.log("Microsoft SELECTED!!");
@@ -186,7 +188,6 @@ stockArray=[];
     // do something when input is focused
   }
   public reset(): void {
-    this.stockX.splice(0,this.stockX.length);
-    this.stockArray.splice(0,this.stockArray.length);
+    
   }
 }

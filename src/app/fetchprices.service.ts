@@ -7,6 +7,16 @@ import {map, shareReplay} from 'rxjs/operators';
 import axios from 'axios';
 import {AxiosInstance} from 'axios';
 import { ErrorHandler } from "@angular/core";
+import { getLocaleDateFormat } from '@angular/common';
+
+
+
+const util = require('util')
+const finnhub = require('finnhub');
+const defaultClient = finnhub.ApiClient.instance;
+const api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "brjvrqvrh5r9g3otgpq0" // get from https://finnhub.io/
+const finnHub = new finnhub.DefaultApi();
 
 @Injectable({
   providedIn: 'root'
@@ -34,13 +44,7 @@ export class FetchpricesService {
 
     //Set up for API
     console.log("service called");
-    const util = require('util')
-    const finnhub = require('finnhub');
-    const defaultClient = finnhub.ApiClient.instance;
-    const api_key = defaultClient.authentications['api_key'];
-    api_key.apiKey = "brjvrqvrh5r9g3otgpq0" // get from https://finnhub.io/
-    const finnHub = new finnhub.DefaultApi();
-    //Set up done
+       //Set up done
    
     finnHub.quote("AMZN",(error,data,response)=>{
        console.log("called");
@@ -54,14 +58,7 @@ export class FetchpricesService {
 })
     //API call....
     
-  finnHub.quote("IBM",(error,data,response)=>{
-      //Setting up the value in BehaviorSubject....
-      this.data1=data.c;
-      console.log("IBM:",data.c);
-      this.coreData1.next(data.c);
-     return data;
-      
-})
+  
 finnHub.quote("IBM",(error,data,response)=>{
   //Setting up the value in BehaviorSubject....
   this.data1=data.c;
@@ -93,11 +90,48 @@ this.apiClient = axios.create({
 }
 
 
+
+
 getData(){
-  console.log("DATA",this.data3);
-  return of(this.data3);
-  
-  this.http.get
+  finnHub.quote("IBM",(error,data,response)=>{
+    //Setting up the value in BehaviorSubject....
+    this.data1=data.c;
+    console.log("IBM:",data.c);
+    this.coreData1.next(data.c);
+   return data;
+    
+})
+
+// finnHub.quote("AMZN",(error,data,response)=>{
+//   console.log("called");
+//  //Setting up the value in BehaviorSubject....
+ 
+//  this.data=data.c;
+//  console.log("Amazon:",data.c);
+//  this.coreData.next(data.c);
+
+ 
+// })
+
+// this
+// finnHub.quote("MSFT",(error,data,response)=>{
+//     //Setting up the value in BehaviorSubject....
+//     console.log("MSFT",data.c)
+//     this.data2=data.c;
+//     this.coreData2.next(data.c);
+//    return data;
+    
+// })
+// this
+// finnHub.quote("AAPL",(error,data,response)=>{
+//     //Setting up the value in BehaviorSubject....
+//     console.log("AAPL",data.c)
+//     this.data2=data.c;
+//     this.coreData2.next(data.c);
+//    return data;
+    
+// })
+setTimeout(()=> {this.getData();console.log("called");}, 10000);
 }
 
 }
