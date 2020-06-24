@@ -53,7 +53,7 @@ export class FetchpricesService {
     
    
     finnHub.quote("AMZN", (error, data, response) => {
-      console.log("called");
+      // console.log("called");
       //Setting up the value in BehaviorSubject....
       this.data = data.c;
       // console.log("Amazon:",data.c);
@@ -73,7 +73,7 @@ export class FetchpricesService {
 
     finnHub.quote("MSFT", (error, data, response) => {
       //Setting up the value in BehaviorSubject....
-      console.log("MSFT", data.c)
+      // console.log("MSFT", data.c)
       this.data2 = data.c;
       this.coreData2.next(data.c);
       return data;

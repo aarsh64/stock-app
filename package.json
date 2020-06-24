@@ -25,6 +25,8 @@
     "@types/axios": "^0.14.0",
     "angular-ng-autocomplete": "^2.0.1",
     "angularfire": "^2.3.0",
+    "aws-amplify": "^3.0.18",
+    "aws-amplify-angular": "^5.0.18",
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "finnhub": "^1.1.3",

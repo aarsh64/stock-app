@@ -51,7 +51,7 @@ export class StockpriceComponent implements OnInit {
     this.service.data.subscribe(data => {
       this.value = data;
       this.numArray = parseInt(data);
-      console.log("Amazon Inside constructor:", this.value);
+      // console.log("Amazon Inside constructor:", this.value);
       if (data != 0) {
         this.stockData.push({
           name: "Amazon",
@@ -63,7 +63,7 @@ export class StockpriceComponent implements OnInit {
     this.service.data1.subscribe(data => {
       this.valu1 = data;
       this.numArray = parseInt(data);
-      console.log("IBM Inside constructor:", this.valu1);
+      // console.log("IBM Inside constructor:", this.valu1);
       if (data != 0) {
         this.stockData.push({
           name: "IBM",
@@ -76,7 +76,7 @@ export class StockpriceComponent implements OnInit {
 
     this.service.data2.subscribe(data => {
       this.valu2 = data;
-      console.log("MSFT Inside constructor:", this.valu2);
+      // console.log("MSFT Inside constructor:", this.valu2);
       if (data != 0) {
         this.stockData.push({
           name: "Microsoft",
@@ -86,7 +86,7 @@ export class StockpriceComponent implements OnInit {
     });
     this.service.data3.subscribe(data => {
       this.valu3 = data;
-      console.log("Apple Inside constructor:", this.valu3);
+      // console.log("Apple Inside constructor:", this.valu3);
       if (data != 0) {
         this.stockData.push({
           name: "Apple",
